@@ -28,7 +28,7 @@ def get_char_count(words:str) -> dict[str, int]:
 
     # return only items that are in the alphabet
     for char_item in char_count_dict:
-        if ord(char_item) >= ord('a') and ord(char_item) <= ord('z'):
+        if char_item.isalpha():
             letter_count_dict[char_item] = char_count_dict[char_item]
 
     """
