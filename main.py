@@ -44,12 +44,22 @@ def get_char_count(words:str) -> dict[str, int]:
 
     return letter_count_dict
 
+def print_char_count(char_count_dict:dict[str, int]) -> None:
+    for item in char_count_dict.items():
+        print(f"The '{item[0]}' was found {item[1]} times")
+
+
 def main():
-    filepath = "books/frankenstein.txt"
+    filepath: str = "books/frankenstein.txt"
     print(f'--- Begin report of {filepath} ---')
-    content = get_book_content(filepath)
+    content: str = get_book_content(filepath)
     print(f'{count_words(content)} words found in the document]\n\n')
-    print(get_char_count(content))
+
+    char_count_dict: dict[str, int] = get_char_count(content)
+
+    print_char_count(char_count_dict)
+
+
 
 if __name__ == "__main__":
     main()
